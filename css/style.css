@@ -564,14 +564,14 @@ video {
   gap: 1rem;
 }
 
-.border-light_red {
-  --tw-border-opacity: 1;
-  border-color: hsl(0 100% 67% / var(--tw-border-opacity));
-}
-
 .border-light_grey {
   --tw-border-opacity: 1;
   border-color: hsl(0 0% 86% / var(--tw-border-opacity));
+}
+
+.border-light_red {
+  --tw-border-opacity: 1;
+  border-color: hsl(0 100% 67% / var(--tw-border-opacity));
 }
 
 .py-6 {
@@ -596,10 +596,6 @@ video {
 .text-smokey_grey {
   --tw-text-opacity: 1;
   color: hsl(0 1% 44% / var(--tw-text-opacity));
-}
-
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 body {
@@ -702,9 +698,16 @@ body {
 }
 
 .title-result {
+  font-family: 'PoppinsB';
   font-size: 40px;
   font-weight: 900;
   font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .title-result {
+    font-size: 50px;
+  }
 }
 
 .required-form {
@@ -729,6 +732,16 @@ body {
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   text-align: center;
+}
+
+@font-face {
+  font-family: 'PoppinsB';
+
+  src: url('/assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+
+  /* Gantilah dengan path menuju file font TTF Anda */
+
+  font-weight: 900;
 }
 
 @media (min-width: 768px) {
