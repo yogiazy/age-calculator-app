@@ -58,28 +58,22 @@ function calculate() {
         }
 
         const tanggal = [31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        let birthday = new Date(y, m-1, d);
         let year = new Date().getFullYear() - y;
-        let month = new Date().getMonth() - (m-1);
+        let month = new Date().getMonth() - (m - 1);
         let day = new Date().getDate() - d;
-        
+
         if (month < 0) {
             year--;
             month += 12;
-            if (day < 0) {
-                month--;
-                day += tanggal[month-1];
-            }
-        } else if (month > 0) {
-            if (day < 0) {
-                month--;
-                day += tanggal[month-1];
-            }
+        }
+
+        if (day < 0) {
+            month--;
+            day += tanggal[month - 1];
         }
 
         $('#dy').textContent = year;
         $('#dm').textContent = month;
         $('#dd').textContent = day;
-
     }
 }
