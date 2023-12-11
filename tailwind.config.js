@@ -9,7 +9,13 @@ module.exports = {
     },
     extend: {
       colors: {
-        light_cyan: 'hsl(193, 38%, 86%)',
+        purple: 'hsl(259, 100%, 65%)',
+        light_red: 'hsl(0, 100%, 67%)',
+        white: 'hsl(0, 0%, 100%)',
+        off_white: 'hsl(0, 0%, 94%)',
+        light_grey: 'hsl(0, 0%, 86%)',
+        smokey_grey: 'hsl(0, 1%, 44%)',
+        off_black: 'hsl(0, 0%, 8%)'
       }
     },
   },
