@@ -41,7 +41,7 @@ function calculate() {
         } else if (id === 'month' && (m > 12 || m <= 0)) {
             notice('#month');
             $(`#${id}-r`).textContent = 'Must be a valid month';
-        } else if (id === 'year' && (y > new Date().getFullYear() || y <= 0)) {
+        } else if (id === 'year' && (y > new Date().getFullYear() || y < 0)) {
             notice('#year');
             $(`#${id}-r`).textContent = 'Must be in the past';
         } else {
@@ -59,9 +59,9 @@ function calculate() {
 
         const tanggal = [31, feb, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         let birthday = new Date(y, m-1, d);
-        let year = new Date().getFullYear() - birthday.getFullYear();
-        let month = new Date().getMonth() - birthday.getMonth();
-        let day = new Date().getDate() - birthday.getDate();
+        let year = new Date().getFullYear() - y;
+        let month = new Date().getMonth() - (m-1);
+        let day = new Date().getDate() - d;
         
         if (month < 0) {
             year--;
