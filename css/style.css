@@ -540,10 +540,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-1 {
-  margin: 0.25rem;
-}
-
 .flex {
   display: flex;
 }
@@ -644,6 +640,7 @@ body {
 @media (min-width: 768px) {
   .border-form {
     height: 60px;
+    font-size: 30px;
   }
 }
 
