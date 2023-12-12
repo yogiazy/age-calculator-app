@@ -35,7 +35,7 @@ function calculate() {
         if ($(`#${id}`).value === '') {
             notice(`#${id}`);
             $(`#${id}-r`).textContent = 'This field is required';
-        } else if (id === 'day' && (d > 31 || d <= 0 || (y % 4 === 0 && m === 2 && d > 29) || (y % 4 != 0 && m === 2 && d > 28))) {
+        } else if (id === 'day' && (d > 31 || d <= 0 || (y % 4 === 0 && m === 2 && d > 29) || (y % 4 != 0 && m === 2 && d > 28) || ((m === 4 || m === 6 || m === 9 || m === 11) && d > 30 ))) {
             notice('#day');
             $(`#${id}-r`).textContent = 'Must be a valid date';
         } else if (id === 'month' && (m > 12 || m <= 0)) {
@@ -65,11 +65,22 @@ function calculate() {
         if (month < 0) {
             year--;
             month += 12;
+        } else if (month === 0) {
+            year--;
+            month = 0;
         }
 
         if (day < 0) {
-            month--;
-            day += tanggal[month - 1];
+            if (month != 1 && month != 0) {
+                month--;
+                day += tanggal[month - 1];
+            } else if (month === 1) {
+                month = 11;
+                day += tanggal[month - 1];
+            } else if (month === 0) {
+                year++;
+                day = -day;
+            }
         }
 
         $('#dy').textContent = year;
