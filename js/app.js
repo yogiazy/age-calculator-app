@@ -35,7 +35,7 @@ function calculate() {
         if ($(`#${id}`).value === '') {
             notice(`#${id}`);
             $(`#${id}-r`).textContent = 'This field is required';
-        } else if (id === 'day' && (d > 31 || d <= 0 || (y % 4 === 0 && m === 2 && d > 29) || (y % 4 != 0 && m === 2 && d > 28) || ((m === 4 || m === 6 || m === 9 || m === 11) && d > 30 ))) {
+        } else if (id === 'day' && (d > 31 || d <= 0 || (y % 4 === 0 && m === 2 && d > 29) || (y % 4 != 0 && m === 2 && d > 28) || ((m === 4 || m === 6 || m === 9 || m === 11) && d > 30 ) || (y === new Date().getFullYear() && m === new Date().getMonth() + 1 && d > new Date().getDate()) || (y === new Date().getFullYear() && m > new Date().getMonth() + 1))) {
             notice('#day');
             $(`#${id}-r`).textContent = 'Must be a valid date';
         } else if (id === 'month' && (m > 12 || m <= 0)) {
