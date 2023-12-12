@@ -75,8 +75,8 @@ function calculate() {
                 month--;
                 day += tanggal[month - 1];
             } else if (month === 1) {
-                month = 11;
-                day += tanggal[month - 1];
+                month = 1;
+                day += tanggal[new Date().getMonth() - 1];
             } else if (month === 0) {
                 year++;
                 day = -day;
