@@ -11,10 +11,10 @@
 </head>
 
 <body>
-  <div class="container-form">
+  <div role="main" class="container-form">
 
     <!-- FORM -->
-    <div class="flex justify-center pb-6 md:justify-start">
+    <div role="form" class="flex justify-center pb-6 md:justify-start">
       <div class="flex items-center justify-center gap-4 md:w-4/5">
         <div class="w-1/3">
           <h2 class="title-form text-smokey_grey">DAY</h2>
@@ -34,14 +34,14 @@
       </div>
     </div>
 
-    <div class="flex justify-center py-6">
+    <div role="button" class="flex justify-center py-6">
       <button id="btn-submit" type="submit" class="btn" onclick="calculate()">
         <img src="./assets/images/icon-arrow.svg" class="icon-submit" alt="icon-arrow">
       </button>
     </div>
 
     <!-- RESULT -->
-    <div class="">
+    <div role="status" class="">
       <h1 class="title-result"><span id="dy" class="text-purple">--</span> years</h1>
       <h1 class="title-result"><span id="dm" class="text-purple">--</span> months</h1>
       <h1 class="title-result"><span id="dd" class="text-purple">--</span> days</h1>
@@ -49,7 +49,7 @@
   </div>
 
   <!-- FOOTER -->
-  <div class="attribution footer">
+  <div role="contentinfo" class="attribution footer">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     <br>Coded by <a href="https://github.com/yogiazy">Yogi Azy</a>.
   </div>
