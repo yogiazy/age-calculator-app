@@ -65,9 +65,6 @@ function calculate() {
         if (month < 0) {
             year--;
             month += 12;
-        } else if (month === 0) {
-            year--;
-            month = 0;
         }
 
         if (day < 0) {
